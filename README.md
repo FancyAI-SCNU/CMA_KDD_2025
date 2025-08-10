@@ -1,5 +1,5 @@
 # Official code of CMA paper
-## _CMA: A Unified Contextual Meta-Adaptation Methodology for Time-Series Denoising and Prediction_ [[Paper]](https://TBD) 
+## _CMA: A Unified Contextual Meta-Adaptation Methodology for Time-Series Denoising and Prediction_ [[Paper]](https://dl.acm.org/doi/10.1145/3711896.3736881) 
 ### Accepted in KDD 2025
 ### Haiqi Jiang, Ying Ding, Chenjie Pan, Aimin Huang, Rui Chen, Chenyou Fan
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg)](./LICENSE) 
@@ -41,3 +41,18 @@ conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=
 pip install einops ema-pytorch matplotlib scikit-learn scipy seaborn tqdm dm-control dm-env dm-tree mujoco gluonts
 ```
 
+# Datasets
+
+We upload the industry datasets: [Google Drive Link](https://drive.google.com/drive/folders/1ir73qd_Ej2Zppa9u4Nfr2Q-n4BDsxEKO)
+
+# Citation
+If you find CMA helpful, please cite us.
+
+```bibtex
+@inproceedings{10.1145/3711896.3736881,
+author = {Jiang, Haiqi and Ding, Ying and Pan, Chenjie and Huang, Aimin and Chen, Rui and Fan, Chenyou},
+title = {CMA: A Unified Contextual Meta-Adaptation Methodology for Time-Series Denoising and Prediction},
+year = {2025},
+booktitle = {Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2},
+}
+```
