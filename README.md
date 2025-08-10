@@ -4,6 +4,14 @@
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg)](./LICENSE) 
 
 
+## Requirements and Installation
+```
+conda create -n diffts python==3.10
+conda activate diffts
+conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install einops ema-pytorch matplotlib scikit-learn scipy seaborn tqdm dm-control dm-env dm-tree mujoco gluonts
+```
+
 ## Datasets
 
 Please download the datasets from 
@@ -35,17 +43,7 @@ python main.py --name traffic --config_file Config/traffic.yaml --gpu=4 --train 
 python main.py --name traffic --config_file Config/traffic.yaml --gpu 3 --sample 1  --milestone 20  --mode predict --pred_len 96
 ```
 
-## Requirement
-```
-conda create -n diffts python==3.10
-conda activate diffts
-```
-```
-conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=12.1 -c pytorch -c nvidia
-```
-```
-pip install einops ema-pytorch matplotlib scikit-learn scipy seaborn tqdm dm-control dm-env dm-tree mujoco gluonts
-```
+
 
 
 ## Citation
