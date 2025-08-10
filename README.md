@@ -1,4 +1,3 @@
-# Official code of our KDD'25 paper
 ## _CMA: A Unified Contextual Meta-Adaptation Methodology for Time-Series Denoising and Prediction_ [[Paper]](https://dl.acm.org/doi/10.1145/3711896.3736881) 
 ### Accepted in KDD 2025
 ### Haiqi Jiang, Ying Ding, Chenjie Pan, Aimin Huang, Rui Chen, Chenyou Fan
