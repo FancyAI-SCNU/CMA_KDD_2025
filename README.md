@@ -5,6 +5,11 @@
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg)](./LICENSE) 
 
 
+# Datasets
+
+Please download the industry datasets: [Google Drive Link](https://drive.google.com/drive/folders/1ir73qd_Ej2Zppa9u4Nfr2Q-n4BDsxEKO)
+Put under datasets/
+
 # Training CMA(Traffic Datasets)
 
 ### Step 1: Run the code of "Timexer" or "iTransformer" to get a pretrained TSP. Here we demonstrate iTransformer as a TSP.
@@ -41,9 +46,6 @@ conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=
 pip install einops ema-pytorch matplotlib scikit-learn scipy seaborn tqdm dm-control dm-env dm-tree mujoco gluonts
 ```
 
-# Datasets
-
-We upload the industry datasets: [Google Drive Link](https://drive.google.com/drive/folders/1ir73qd_Ej2Zppa9u4Nfr2Q-n4BDsxEKO)
 
 # Citation
 If you find CMA helpful, please cite us.
