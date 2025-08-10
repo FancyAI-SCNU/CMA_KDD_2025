@@ -1,0 +1,87 @@
+model:
+  target: Models.interpretable_diffusion.gaussian_diffusion_time_flex_all_adapt.Diffusion_TS
+  params:
+    seq_length: 240
+    feat_len: 120
+    feature_size: 26
+    n_layer_enc: 3
+    n_layer_dec: 2
+    d_model: 512  # 4 X 16
+    timesteps: 500
+    sampling_timesteps: 200
+    loss_type: 'l1'
+    beta_schedule: 'cosine'
+    n_heads: 4
+    mlp_hidden_times: 4
+    attn_pd: 0.0
+    resid_pd: 0.0
+    kernel_size: 1
+    padding_size: 0
+
+solver:
+  base_lr: 1.0e-5
+  max_epochs: 1
+  results_folder:  Checkpoints/stocktime
+  gradient_accumulate_every: 2 #32
+  save_cycle: 1  # max_epochs // 10
+  ema:
+    decay: 0.995
+    update_interval: 10
+  
+  scheduler:
+    target: engine.lr_sch.ReduceLROnPlateauWithWarmup
+    params:
+      factor: 0.5
+      patience: 4000
+      min_lr: 1.0e-6
+      threshold: 1.0e-1
+      threshold_mode: rel
+      warmup_lr: 8.0e-4
+      warmup: 30
+      verbose: False
+
+dataloader:
+  train_dataset:
+    target: Utils.Data_utils.stock_sequence_dataset_label5min.public_stock_dataset_train
+    params:
+      name: stock
+      proportion: 1.0  
+      data_root: ./Data/datasets/weather.csv
+      window: 360
+      feat_len: 120
+      save2npy: True
+      neg_one_to_one: True
+      seed: 123
+      period: False
+      predict_length: 240
+      adapt: 0
+      adapt_h: True
+      adapt_num_step: 6
+      seq_len: 240
+
+  test_dataset:
+    target: Utils.Data_utils.stock_sequence_dataset_label5min.public_stock_dataset_test
+    params:
+      name: stock
+      proportion: 0.9  # rate
+      data_root: ./Data/datasets/stock.csv
+      window: 360
+      feat_len: 120
+      save2npy: True
+      neg_one_to_one: True
+      seed: 123
+      period: test
+      predict_length: 240
+      style: separate
+      distribution: geometric
+      adapt: 0
+      adapt_h: True
+      adapt_num_step: 6
+      seq_len: 240
+    coefficient: 1.0e-2
+    step_size: 5.0e-2
+    sampling_steps: 200
+
+  batch_size: 256
+  sample_size: 256
+  shuffle: True

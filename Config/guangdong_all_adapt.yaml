@@ -1,0 +1,87 @@
+model:
+  target: Models.interpretable_diffusion.gaussian_diffusion_time_flex_all_adapt.Diffusion_TS
+  params:
+    seq_length: 90
+    feat_len: 36
+    feature_size: 17
+    n_layer_enc: 3
+    n_layer_dec: 2
+    d_model: 512  # 4 X 16
+    timesteps: 500
+    sampling_timesteps: 1
+    loss_type: 'l1'
+    beta_schedule: 'cosine'
+    n_heads: 4
+    mlp_hidden_times: 4
+    attn_pd: 0.0
+    resid_pd: 0.0
+    kernel_size: 1
+    padding_size: 0
+
+solver:
+  base_lr: 1.0e-5
+  max_epochs: 400
+  results_folder: ./meta_checkpoints/guangdong_time
+  gradient_accumulate_every: 3 
+  save_cycle: 40  # max_epochs // 10
+  ema:
+    decay: 0.995
+    update_interval: 10
+  
+  scheduler:
+    target: engine.lr_sch.ReduceLROnPlateauWithWarmup
+    params:
+      factor: 0.5
+      patience: 4000
+      min_lr: 1.0e-5
+      threshold: 1.0e-1
+      threshold_mode: rel
+      warmup_lr: 8.0e-4
+      warmup: 1000
+      verbose: False
+
+dataloader:
+  train_dataset:
+    target: Utils.Data_utils.real_datasets_all_adapt.CustomDataset
+    params:
+      name: guangdong
+      proportion: 1.0  
+      data_root: ./Data/datasets/guangdong_17.csv
+      window: 126
+      feat_len: 36
+      save2npy: True
+      neg_one_to_one: True
+      seed: 123
+      period: train
+      predict_length: 90
+      adapt: 0
+      adapt_h: False
+      adapt_num_step: 6
+      seq_len: 90
+
+  test_dataset:
+    target: Utils.Data_utils.real_datasets_all_adapt.CustomDataset
+    params:
+      name: guangdong
+      proportion: 0.9  # rate
+      data_root: ./Data/datasets/guangdong_17.csv
+      window: 126
+      feat_len: 36
+      save2npy: True
+      neg_one_to_one: True
+      seed: 123
+      period: test
+      predict_length: 90
+      style: separate
+      distribution: geometric
+      adapt: 0
+      adapt_h: False
+      adapt_num_step: 6
+      seq_len: 90
+    coefficient: 1.0e-2
+    step_size: 5.0e-2
+    sampling_steps: 200 #25
+
+  batch_size: 48
+  sample_size: 64 
+  shuffle: True
