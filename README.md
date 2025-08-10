@@ -14,8 +14,10 @@ pip install einops ema-pytorch matplotlib scikit-learn scipy seaborn tqdm dm-con
 
 ## Datasets
 
-Please download the datasets from 
+Please download our self-collected industrial datasets (US Stock, China Stock, China Carbon Emission Data) from 
 <a href="https://drive.google.com/drive/folders/1ir73qd_Ej2Zppa9u4Nfr2Q-n4BDsxEKO" target="_blank" rel="noopener noreferrer">Drive</a>
+
+Please download Academic datasets (Traffic, ETTh, etc) from <a href="https://github.com/thuml/Autoformer" target="_blank" rel="noopener noreferrer">Autoformer</a> official website.
 
 Unzip them and place under ./Data/datasets, or change Config/ yaml for your customized locations.
 
