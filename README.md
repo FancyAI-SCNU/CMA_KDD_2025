@@ -6,8 +6,8 @@
 
 ## Requirements and Installation
 ```
-conda create -n diffts python==3.10
-conda activate diffts
+conda create -n cma python==3.10
+conda activate cma
 conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=12.1 -c pytorch -c nvidia
 pip install einops ema-pytorch matplotlib scikit-learn scipy seaborn tqdm dm-control dm-env dm-tree mujoco gluonts
 ```
