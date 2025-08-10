@@ -6,9 +6,8 @@
 
 ## Datasets
 
-[[Drive]](https://drive.google.com/drive/folders/1ir73qd_Ej2Zppa9u4Nfr2Q-n4BDsxEKO){:target="_blank"}
-
-[paper](https://ieeexplore.ieee.org/document/10149393 target="_blank")
+Please download the datasets from 
+[Drive](https://drive.google.com/drive/folders/1ir73qd_Ej2Zppa9u4Nfr2Q-n4BDsxEKO){:target="_blank" rel="noopener noreferrer"}
  
 Please put under ./Data/datasets, or change Config/ yaml for your customized locations.
 
