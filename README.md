@@ -19,9 +19,11 @@ Please download the datasets from
 
 Unzip them and place under ./Data/datasets, or change Config/ yaml for your customized locations.
 
-## Training CMA(Traffic Datasets)
+## Training CMA
 
-### Step 1: Run the code of "Timexer" or "iTransformer" to get a pretrained TSP. Here we demonstrate iTransformer as a TSP.
+### Step 1: Run the code of "Timexer" or "iTransformer" to get a pretrained TSP.
+
+Here we demonstrate iTransformer as a TSP backbone, and show example on training with Traffic data
 ```
 bash scripts_itrans/iTrans_traffic.sh  
 ```
@@ -38,7 +40,7 @@ python main.py --name traffic --config_file Config/traffic_dts.yaml --gpu=4 --tr
 python main.py --name traffic --config_file Config/traffic.yaml --gpu=4 --train --milestone 10 --pretrained
 ```
 
-## Testing CMA(Traffic Datasets)
+## Testing CMA
 ```
 python main.py --name traffic --config_file Config/traffic.yaml --gpu 3 --sample 1  --milestone 20  --mode predict --pred_len 96
 ```
