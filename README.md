@@ -5,12 +5,12 @@
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg)](./LICENSE) 
 
 
-# Datasets
+## Datasets
 
 Please download the industry datasets: [Google Drive Link](https://drive.google.com/drive/folders/1ir73qd_Ej2Zppa9u4Nfr2Q-n4BDsxEKO)
 Put under datasets/
 
-# Training CMA(Traffic Datasets)
+## Training CMA(Traffic Datasets)
 
 ### Step 1: Run the code of "Timexer" or "iTransformer" to get a pretrained TSP. Here we demonstrate iTransformer as a TSP.
 ```
@@ -29,12 +29,12 @@ python main.py --name traffic --config_file Config/traffic_dts.yaml --gpu=4 --tr
 python main.py --name traffic --config_file Config/traffic.yaml --gpu=4 --train --milestone 10 --pretrained
 ```
 
-# Testing CMA(Traffic Datasets)
+## Testing CMA(Traffic Datasets)
 ```
 python main.py --name traffic --config_file Config/traffic.yaml --gpu 3 --sample 1  --milestone 20  --mode predict --pred_len 96
 ```
 
-# Requirement
+## Requirement
 ```
 conda create -n diffts python==3.10
 conda activate diffts
@@ -47,11 +47,11 @@ pip install einops ema-pytorch matplotlib scikit-learn scipy seaborn tqdm dm-con
 ```
 
 
-# Citation
-If you find CMA helpful, please cite us.
+## Citation
+If you find this repo helpful in your research, please kindly cite us.
 
 ```bibtex
-@inproceedings{10.1145/3711896.3736881,
+@inproceedings{jiang2025cma,
 author = {Jiang, Haiqi and Ding, Ying and Pan, Chenjie and Huang, Aimin and Chen, Rui and Fan, Chenyou},
 title = {CMA: A Unified Contextual Meta-Adaptation Methodology for Time-Series Denoising and Prediction},
 year = {2025},
