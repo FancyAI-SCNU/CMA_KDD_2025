@@ -1,4 +1,4 @@
-# Official code of CMA paper
+# Official code of our KDD'25 paper
 ## _CMA: A Unified Contextual Meta-Adaptation Methodology for Time-Series Denoising and Prediction_ [[Paper]](https://dl.acm.org/doi/10.1145/3711896.3736881) 
 ### Accepted in KDD 2025
 ### Haiqi Jiang, Ying Ding, Chenjie Pan, Aimin Huang, Rui Chen, Chenyou Fan
@@ -53,6 +53,6 @@ If you find CMA helpful, please cite us.
 author = {Jiang, Haiqi and Ding, Ying and Pan, Chenjie and Huang, Aimin and Chen, Rui and Fan, Chenyou},
 title = {CMA: A Unified Contextual Meta-Adaptation Methodology for Time-Series Denoising and Prediction},
 year = {2025},
-booktitle = {Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2},
+booktitle = {Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)},
 }
 ```
